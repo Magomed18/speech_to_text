@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Speech recognizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}">
+</head>
+<body>
+
+<div id="speech container", align="center">
+    {%if text == ""%}
+	<h1>Upload audio file</h1>
+	<form method="post" enctype="multipart/form-data">
+		<input type="file" name="file", id="flider", class="words">
+		<br>
+		<input type="submit" id='submitButton' name="Transcribe">
+	</form>	
+	{%endif%}
+
+    {%if text != ""%}
+	<div id='speechTranscriptContainer'>
+		<h1>Text</h1>
+		<p id='speechText'>{{text}}</p>
+	</div>
+	{%endif%}
+	<!-- <div id='TimeElapse'>
+		<h1>Time spent on task</h1>
+		<p>{{time}} sec</p>
+	</div>		
+	 -->
+
+</div>	
+</body>
+</html>
